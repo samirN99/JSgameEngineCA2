@@ -189,17 +189,14 @@ class Player extends GameObject {
 
   resetPlayerState() {
     // Reset the player's state, repositioning it and nullifying movement
-  this.x = this.game.canvas.width / 2 - this.renderer.width / 2; // Adjust x position
-  this.y = this.game.canvas.height - this.renderer.height / 1; // Adjust y position
-  this.getComponent(Physics).velocity = { x: 0, y: 0 };
-  this.getComponent(Physics).acceleration = { x: 0, y: 0 };
-  this.direction = 1;
-  this.isOnPlatform = false;
-  this.isJumping = false;
-  this.jumpTimer = 0;
-
-  const platformHeight = /* height of your platform */ // Replace with the actual height of your platform
-  this.y -= platformHeight; // Adjust y position based on the height of the platform
+    this.x = this.game.canvas.width / 2;
+    this.y = this.game.canvas.height / 3;
+    this.getComponent(Physics).velocity = { x: 0, y: 0 };
+    this.getComponent(Physics).acceleration = { x: 0, y: 0 };
+    this.direction = 1;
+    this.isOnPlatform = false;
+    this.isJumping = false;
+    this.jumpTimer = 0;
   }
 
   resetGame() {
