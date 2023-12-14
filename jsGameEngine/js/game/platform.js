@@ -3,6 +3,7 @@ import GameObject from '../engine/gameobject.js';
 import Renderer from '../engine/renderer.js';
 import Physics from '../engine/physics.js';
 
+
 // Define a new class, Platform, which extends (inherits from) GameObject
 class Platform extends GameObject {
   

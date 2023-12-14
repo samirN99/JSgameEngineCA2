@@ -6,6 +6,7 @@ import PlayerUI from './playerUI.js';
 import Platform from './platform.js';
 import Collectible from './collectible.js';
 
+
 // Define a class Level that extends the Game class from the engine
 class Level extends Game {
   
