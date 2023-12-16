@@ -5,24 +5,24 @@ import Component from './component.js';
 class Animation extends Component{
 
 constructor(){
-    super();
-    this.gameAnim= []; 
-    this.currentFrame = 0;
+    super();                // call the constructer
+    this.gameAnim= [];          //array for animation
+    this.currentFrame = 0;      //current frame rate
     this.speed = 0.5;
     this.currentAnim = 0;
 }
 
-addAnimation(animation){
+addAnimation(animation){        //// Method to add an animation to the gameAnim array
     this.gameAnim.push(animation);
 }
 
-update(deltaTime){
+update(deltaTime){                           // Method to update the animation state based on elapsed time (deltaTime)
     this.currentFrame+= deltaTime * this.speed;
     if(this.currentFrame >= this.gameAnim[this.currentAnim].length){
         this.currentFrame = 0;
     }
     let renderer = this.gameObject.getComponent(Renderer);
-    renderer.image = this.gameAnim[this.currentAnim][Math.floor(this.currentFrame)];
+    renderer.image = this.gameAnim[this.currentAnim][Math.floor(this.currentFrame)];     // Update the image property of the Renderer with the current frame of the current animation
 }
 
 
