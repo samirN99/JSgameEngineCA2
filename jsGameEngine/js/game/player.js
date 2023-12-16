@@ -84,8 +84,14 @@ class Player extends GameObject {
         if (!this.isJumping) {
           physics.velocity.y = 0;
           physics.acceleration.y = 0;
+<<<<<<< Updated upstream
           this.y = platform.y - this.renderer.height;
           this.isOnPlatform = true;
+=======
+          
+         
+         
+>>>>>>> Stashed changes
         }
       }
     }
