@@ -17,6 +17,7 @@ class Physics extends Component {
     // Update velocity based on acceleration and gravity.
     this.velocity.x += this.acceleration.x * deltaTime;
     this.velocity.y += (this.acceleration.y + this.gravity.y) * deltaTime;
+
     // Move the game object based on the velocity.
     this.gameObject.x += this.velocity.x * deltaTime;
     this.gameObject.y += this.velocity.y * deltaTime;
