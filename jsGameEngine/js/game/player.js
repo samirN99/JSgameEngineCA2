@@ -90,6 +90,7 @@ class Player extends GameObject {
           physics.velocity.y = 0;
           physics.acceleration.y = 0;
           this.y = platform.y - this.renderer.height ;
+          this.isOnPlatform = true;
          
          
         }
