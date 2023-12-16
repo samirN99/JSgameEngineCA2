@@ -8,16 +8,19 @@ import Enemy from './enemy.js';
 import Platform from './platform.js';
 import Collectible from './collectible.js';
 import ParticleSystem from '../engine/particleSystem.js';
+import Animation from '../engine/animation.js';
 
 // Defining a class Player that extends GameObject
 class Player extends GameObject {
   // Constructor initializes the game object and add necessary components
   constructor(x, y) {
     super(x, y); // Call parent's constructor
-    this.renderer = new Renderer('blue', 25, 50, Images.player); // Add renderer
+    this.renderer = new Renderer('blue', 2225, 50, Images.player); // Add renderer
     this.addComponent(this.renderer);
     this.addComponent(new Physics({ x: 0, y: 0 }, { x: 0, y: 0 })); // Add physics
     this.addComponent(new Input()); // Add input for handling user input
+   
+
     // Initialize all the player specific properties
     this.direction = 1;
     this.lives = 3;
@@ -30,6 +33,8 @@ class Player extends GameObject {
     this.isInvulnerable = false;
     this.isGamepadMovement = false;
     this.isGamepadJump = false;
+    this.addComponent(new Animation());
+    this.getComponent(Animation).addAnimation([Images.player, Images.pAttack1, Images.pAttack2]);
   }
 
   // The update function runs every frame and contains game logic
@@ -107,6 +112,17 @@ class Player extends GameObject {
       location.reload();
     }
 
+    
+    let animation = this.getComponent(Animation);
+    if(physics.velocity.x == 0){
+      animation.currentAnim= 0;
+      animation.speed = 5;
+    }
+else{
+  animation.currentAnim = 0;
+  animation.speed = 5;
+
+}
     super.update(deltaTime);
   }
 

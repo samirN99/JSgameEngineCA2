@@ -1,6 +1,8 @@
 // Create an Images object to hold the Image instances for the player and the enemy.
 const Images = {
   player: new Image(), // The Image instance for the player.
+  pAttack1: new Image(),
+  pAttack2: new Image(),
   enemy: new Image(), // The Image instance for the enemy.
 };
 
@@ -13,6 +15,8 @@ const AudioFiles = {
 
 // Set the source of the player image.
 Images.player.src = './resources/images/player/player.png'; // Update the image path
+Images.pAttack1.src = './resources/images/player/pAttack1.png'; // Update the image path
+Images.pAttack2.src = './resources/images/player/pAttack2.png'; // Update the image path
 
 // Set the source of the enemy image.
 Images.enemy.src = './resources/images/enemy/enemy.png'; // Update the image path

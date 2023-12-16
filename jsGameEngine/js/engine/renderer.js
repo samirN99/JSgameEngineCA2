@@ -1,4 +1,4 @@
-// Import the required modules and classes.
+/// Import the required modules and classes.
 import Component from './component.js';
 
 // The Renderer class extends Component and handles the visual representation of a game object.
